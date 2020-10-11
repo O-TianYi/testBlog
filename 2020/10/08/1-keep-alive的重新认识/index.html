@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="keep-alive是什么官方解析参考 目的：解决组件切换的时候，想要保持某些组件的状态，避免反复重复渲染导致的性能问题。(即主要用于保留组件状态或避免重新渲染)  keep-alive的使用场景参考 通过keep-alive包裹的组件，在不活动时会缓存组件实例，不会对组件进行销毁，再次处于活动状态时，会读取缓存的内容并保存组件状态，不用重复请求接口获取数据。 keep-alive怎么用官方使用参">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2020/10/08/1-keep-alive%E7%9A%84%E9%87%8D%E6%96%B0%E8%AE%A4%E8%AF%86/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="keep-alive是什么官方解析参考 目的：解决组件切换的时候，想要保持某些组件的状态，避免反复重复渲染导致的性能问题。(即主要用于保留组件状态或避免重新渲染)  keep-alive的使用场景参考 通过keep-alive包裹的组件，在不活动时会缓存组件实例，不会对组件进行销毁，再次处于活动状态时，会读取缓存的内容并保存组件状态，不用重复请求接口获取数据。 keep-alive怎么用官方使用参">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-10-08T13:33:22.818Z">
+<meta property="article:modified_time" content="2020-10-08T13:32:23.258Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-1-keep-alive的重新认识" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/08/1-keep-alive%E7%9A%84%E9%87%8D%E6%96%B0%E8%AE%A4%E8%AF%86/" class="article-date">
+  <time datetime="2020-10-08T13:33:22.818Z" itemprop="datePublished">2020-10-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="keep-alive是什么"><a href="#keep-alive是什么" class="headerlink" title="keep-alive是什么"></a>keep-alive是什么</h4><h5 id="官方解析参考"><a href="#官方解析参考" class="headerlink" title="官方解析参考"></a>官方解析<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/components-dynamic-async.html">参考</a></h5><ul>
+<li>目的：解决组件切换的时候，想要保持某些组件的状态，避免反复重复渲染导致的性能问题。(即<strong>主要用于保留组件状态或避免重新渲染</strong>)</li>
+</ul>
+<h5 id="keep-alive的使用场景"><a href="#keep-alive的使用场景" class="headerlink" title="keep-alive的使用场景"></a>keep-alive的使用场景</h5><p><a target="_blank" rel="noopener" href="https://juejin.im/post/6844903846901186574">参考</a></p>
+<p>通过keep-alive包裹的组件，在不活动时会缓存组件实例，不会对组件进行销毁，再次处于活动状态时，会读取缓存的内容并保存组件状态，不用重复请求接口获取数据。</p>
+<h4 id="keep-alive怎么用"><a href="#keep-alive怎么用" class="headerlink" title="keep-alive怎么用"></a>keep-alive怎么用</h4><h5 id="官方使用参考"><a href="#官方使用参考" class="headerlink" title="官方使用参考"></a>官方使用<a target="_blank" rel="noopener" href="https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-keep-alive-with-dynamic-components">参考</a></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 失活的组件将会被缓存！--&gt;</span><br><span class="line">&lt;keep-alive&gt;</span><br><span class="line">  &lt;component v-bind:is&#x3D;&quot;currentTabComponent&quot;&gt;&lt;&#x2F;component&gt;</span><br><span class="line">&lt;&#x2F;keep-alive&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>这个 <code>&lt;keep-alive&gt;</code> 要求被切换到的组件都有自己的名字，不论是通过组件的 <code>name</code> 选项还是局部/全局注册。</p>
+<h5 id="【重】vue-element-admin中对keep-alive的使用（我的工作中的应用场景）"><a href="#【重】vue-element-admin中对keep-alive的使用（我的工作中的应用场景）" class="headerlink" title="【重】vue-element-admin中对keep-alive的使用（我的工作中的应用场景）"></a>【重】vue-element-admin中对keep-alive的使用（我的工作中的应用场景）</h5><p>vue-element-admin是使用vuex来统一管理所有组件，把所有组件的名称存储在一个名叫cacheViews的状态中。代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;keep-alive :include&#x3D;&quot;cachedViews&quot;&gt;</span><br><span class="line">        &lt;router-view :key&#x3D;&quot;key&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;keep-alive&gt;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;cachedViews是一个缓存组件的数组，存储的组价的name</span><br><span class="line">computed: &#123;</span><br><span class="line">    cachedViews() &#123;</span><br><span class="line">      console.log(</span><br><span class="line">        &#39;添加到缓存的页面有：&#39;,</span><br><span class="line">        this.$store.state.tagsView.cachedViews</span><br><span class="line">      )</span><br><span class="line">      return this.$store.state.tagsView.cachedViews</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意的是，自己写的路由页面必须带和状态存储的一致的名称，否则keep-alive不起作用。</strong>即需要保存的组件必须含有name，该name必须和cachedViews保存一致。代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line">  name: &#39;organ-category-manage&#39;,&#x2F;&#x2F;存储在cachedViews的名称一致的时候，keep-alive才起作用</span><br><span class="line">  activated() &#123;</span><br><span class="line">    console.log(&#39;触发了organ-category-manage再次获取数据&#39;, this.dataForm)</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="keep-alive的更多API"><a href="#keep-alive的更多API" class="headerlink" title="keep-alive的更多API"></a>keep-alive的更多API</h5><p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#keep-alive">参考官网API</a></p>
+<ul>
+<li><p>props:</p>
+<ul>
+<li><code>include</code> - 字符串或正则表达式。只有名称匹配的组件会被缓存。</li>
+<li><code>exclude</code> - 字符串或正则表达式。任何名称匹配的组件都不会被缓存。</li>
+<li><code>max</code> - 数字。最多可以缓存多少组件实例。</li>
+</ul>
+</li>
+<li><p><strong>用法</strong>：</p>
+<p><code>&lt;keep-alive&gt;</code> 包裹动态组件时，会缓存不活动的组件实例，而不是销毁它们。和 <code>&lt;transition&gt;</code> 相似，<code>&lt;keep-alive&gt;</code> 是一个抽象组件：它自身不会渲染一个 DOM 元素，也不会出现在组件的父组件链中。</p>
+<p>当组件在 <code>&lt;keep-alive&gt;</code> 内被切换，它的 <code>activated</code> 和 <code>deactivated</code> 这两个生命周期钩子函数将会被对应执行。</p>
+</li>
+</ul>
+<p>1.一般用法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 基本 --&gt;</span><br><span class="line">&lt;keep-alive&gt;</span><br><span class="line">  &lt;component :is&#x3D;&quot;view&quot;&gt;&lt;&#x2F;component&gt;</span><br><span class="line">&lt;&#x2F;keep-alive&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 多个条件判断的子组件 --&gt;</span><br><span class="line">&lt;keep-alive&gt;</span><br><span class="line">  &lt;comp-a v-if&#x3D;&quot;a &gt; 1&quot;&gt;&lt;&#x2F;comp-a&gt;</span><br><span class="line">  &lt;comp-b v-else&gt;&lt;&#x2F;comp-b&gt;</span><br><span class="line">&lt;&#x2F;keep-alive&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 和 &#96;&lt;transition&gt;&#96; 一起使用 --&gt;</span><br><span class="line">&lt;transition&gt;</span><br><span class="line">  &lt;keep-alive&gt;</span><br><span class="line">    &lt;component :is&#x3D;&quot;view&quot;&gt;&lt;&#x2F;component&gt;</span><br><span class="line">  &lt;&#x2F;keep-alive&gt;</span><br><span class="line">&lt;&#x2F;transition&gt;</span><br></pre></td></tr></table></figure>
+
+<p>注意，<code>&lt;keep-alive&gt;</code> 是用在其一个直属的子组件被开关的情形。如果你在其中有 <code>v-for</code> 则不会工作。如果有上述的多个条件性的子元素，<code>&lt;keep-alive&gt;</code> 要求同时只有一个子元素被渲染。</p>
+<p>2.<code>include</code> 和 <code>exclude</code> prop 允许组件有条件地缓存。二者都可以用逗号分隔字符串、正则表达式或一个数组来表示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 逗号分隔字符串 --&gt;</span><br><span class="line">&lt;keep-alive include&#x3D;&quot;a,b&quot;&gt;</span><br><span class="line">  &lt;component :is&#x3D;&quot;view&quot;&gt;&lt;&#x2F;component&gt;</span><br><span class="line">&lt;&#x2F;keep-alive&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 正则表达式 (使用 &#96;v-bind&#96;) --&gt;</span><br><span class="line">&lt;keep-alive :include&#x3D;&quot;&#x2F;a|b&#x2F;&quot;&gt;</span><br><span class="line">  &lt;component :is&#x3D;&quot;view&quot;&gt;&lt;&#x2F;component&gt;</span><br><span class="line">&lt;&#x2F;keep-alive&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 数组 (使用 &#96;v-bind&#96;) --&gt;</span><br><span class="line">&lt;keep-alive :include&#x3D;&quot;[&#39;a&#39;, &#39;b&#39;]&quot;&gt;</span><br><span class="line">  &lt;component :is&#x3D;&quot;view&quot;&gt;&lt;&#x2F;component&gt;</span><br><span class="line">&lt;&#x2F;keep-alive&gt;</span><br></pre></td></tr></table></figure>
+
+<p>匹配首先检查组件自身的 <code>name</code> 选项，如果 <code>name</code> 选项不可用，则匹配它的局部注册名称 (父组件 <code>components</code> 选项的键值)。匿名组件不能被匹配。</p>
+<p>3.最多可以缓存多少组件实例。一旦这个数字达到了，在新实例被创建之前，已缓存组件中最久没有被访问的实例会被销毁掉。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;keep-alive :max&#x3D;&quot;10&quot;&gt;</span><br><span class="line">  &lt;component :is&#x3D;&quot;view&quot;&gt;&lt;&#x2F;component&gt;</span><br><span class="line">&lt;&#x2F;keep-alive&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="keep-alive两个重要的生命周期"><a href="#keep-alive两个重要的生命周期" class="headerlink" title="keep-alive两个重要的生命周期"></a>keep-alive两个重要的生命周期</h4><ul>
+<li><p>activated：页面第一次进入的时候，钩子触发的顺序是created-&gt;mounted-&gt;activated</p>
+</li>
+<li><p>deactivated ：页面退出的时候会触发deactivated，当再次前进或者后退的时候只触发</p>
+</li>
+</ul>
+<h4 id="keep-alive的坑"><a href="#keep-alive的坑" class="headerlink" title="keep-alive的坑"></a>keep-alive的坑</h4><ul>
+<li><p>需要使用actived来直接取代created或者mounted的生命周期时候做的操作，例如发送请求等。（但是这样强刷，例如按f5的时候不会触发activated的问题）</p>
+</li>
+<li><p>若actived和created生命周期共存会存在的问题是，第一次访问的时候会触发created和actived这两个生命周期，导致的结果就是请求会发送两次，增加服务器的压力。</p>
+</li>
+<li><p>若使用actived，把created生命周期删除。会出现的问题：强制刷新，请求没有，原因是强制刷新的时候不会走actived这个生命周期，所以导致请求没有发送请求。</p>
+</li>
+<li><p>解决强刷不经过actived生命周期的解决办法是添加一个变量来控制该组件切换是否为第一次进入还是非第二次进入。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">    	firstEnter:false</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">created() &#123;</span><br><span class="line">    this.getDataList()</span><br><span class="line">  &#125;,</span><br><span class="line">  activated() &#123;</span><br><span class="line">    if (this.firstEnter) &#123;&#x2F;&#x2F;非第一次进入的时候</span><br><span class="line">      this.getDataList()</span><br><span class="line">    &#125; else &#123;&#x2F;&#x2F;第一次进入，标识该组件已经被缓存</span><br><span class="line">      this.firstEnter &#x3D; true</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>还会存在的问题，例如该缓存的页面中有一个输入框，该输入框是用于搜索数据然后渲染到页面的，所以当在该输入框输入了内容的时候，第二次切换回来的时候就会进入actived生命周期执行getDataList方法获取数据列表，并携带了输入框的条件。解决办法是：用两个状态保存，一个状态保存用户在输入框输入的内容，一个保存用户点击了查询按钮后当前显示在页面上的数据的状态。这样既可以保存用户输入的内容，也可以实现保存组件状态的问题。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"> data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">    dataForm: &#123;&#x2F;&#x2F;用于保存用户输入的状态</span><br><span class="line">        pageNo: 1,</span><br><span class="line">        pageSize: 10,</span><br><span class="line">        keyWord: &#39;&#39;,</span><br><span class="line">     &#125;,</span><br><span class="line">      keepStateDataForm: &#123;&#x2F;&#x2F;用于作为查询条件的状态</span><br><span class="line">        pageNo: 1,</span><br><span class="line">        pageSize: 10,</span><br><span class="line">        keyWord: &#39;&#39;,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;获取渲染数据的统一方法，包括查询</span><br><span class="line">getDataList(index) &#123;</span><br><span class="line">      if (index) &#123;</span><br><span class="line">        this.dataForm.pageNo &#x3D; index</span><br><span class="line">        &#x2F;&#x2F;查询的时候保存最新的数据列表</span><br><span class="line">        this.keepStateDataForm &#x3D; JSON.parse(JSON.stringify(this.dataForm))</span><br><span class="line">      &#125;</span><br><span class="line">      this.dataListLoading &#x3D; true</span><br><span class="line">      let params &#x3D; &#123;</span><br><span class="line">        pageNo: this.dataForm.pageNo,&#x2F;&#x2F;使用原数据的pageNo和pageSize</span><br><span class="line">        pageSize: this.dataForm.pageSize,</span><br><span class="line">        keyWord: this.keepStateDataForm.keyWord,</span><br><span class="line">      &#125;</span><br><span class="line">      &#x2F;&#x2F;发送请求获取数据</span><br><span class="line">      activityInfoList(params).then(res&#x3D;&gt;&#123;...&#125;)</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> &#x2F;**分页的方法，谨慎使用带参数的getDataList方法，因为会进行一个状态的保存，</span><br><span class="line"> 注意的状态保存会影响下一次数据的查询。可以使用下面代码解决，需要传递pageNo的问题</span><br><span class="line"> &#96;this.dataForm.pageNo&#x3D;1;this.getDataList()&#96;</span><br><span class="line"> </span><br><span class="line"> **&#x2F;</span><br><span class="line"> &#x2F;&#x2F; 每页数</span><br><span class="line"> sizeChangeHandle(val) &#123;</span><br><span class="line">     this.dataForm.pageSize &#x3D; val</span><br><span class="line">     this.dataForm.pageNo &#x3D; 1</span><br><span class="line">     this.getDataList()</span><br><span class="line"> &#125;,</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 当前页</span><br><span class="line">currentChangeHandle(val) &#123;</span><br><span class="line">    this.dataForm.pageNo &#x3D; val</span><br><span class="line">    this.getDataList()</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">reset() &#123;</span><br><span class="line">    this.dataForm &#x3D; &#123;</span><br><span class="line">        pageNo: 1,</span><br><span class="line">        pageSize: 10,</span><br><span class="line">        keyWord: &#39;&#39;,</span><br><span class="line">    &#125;</span><br><span class="line">    this.keepStateDataForm &#x3D; JSON.parse(JSON.stringify(this.dataForm))</span><br><span class="line">    this.getDataList(1)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/08/1-keep-alive%E7%9A%84%E9%87%8D%E6%96%B0%E8%AE%A4%E8%AF%86/" data-id="ckg54np7b0001ksujdqdifq7j" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/10/08/2-%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%BB%91%E5%AE%9A%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%9D%91/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/10/11/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/11/15-%E7%B2%92%E5%AD%90%E7%89%B9%E6%95%88%E7%9A%84%E5%AD%A6%E4%B9%A0/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/11/14-mock%E6%95%B0%E6%8D%AE%E6%A8%A1%E6%8B%9F/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/11/13-canvas%E7%9A%84%E5%85%A5%E9%97%A8%E6%8E%A5%E8%A7%A6/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/11/13-%E5%BC%95%E5%85%A5%E9%98%BF%E9%87%8C%E5%9B%BE%E6%A0%87/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
